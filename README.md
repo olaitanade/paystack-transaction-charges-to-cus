@@ -7,6 +7,7 @@ PaystackTransactionChargeToCustomer provides the implementation to the formula p
 This library currently only works with the Nigerian Paystack Charges
 
 **Flat Fee - 100 Naira**
+ | 
 **Decimal Fee - 1.5%**
 
 ### Get Started
