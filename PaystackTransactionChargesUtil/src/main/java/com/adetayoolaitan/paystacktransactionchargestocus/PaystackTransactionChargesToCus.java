@@ -6,14 +6,18 @@ public class PaystackTransactionChargesToCus {
     private static final int FEE_CAP = 2000;
     private static final int FLAT_FEE = 100;
 
-    public static String calculateTotalPrice(String amount){
-        Double amt = Double.parseDouble(amount);
-        if(amt<100){
-            return String.valueOf((int)(amt+1));
-        }else if(amt<2500){
-            return calculateFor2500Below(amt);
-        }else{
-            return calculateFor2500Above(amt);
+    public static String calculateTotalPrice(String amount) throws Exception {
+        if(amount!=null && !amount.isEmpty()){
+            Double amt = Double.parseDouble(amount);
+            if(amt<100){
+                return String.valueOf((int)(amt+1));
+            }else if(amt<2500){
+                return calculateFor2500Below(amt);
+            }else{
+                return calculateFor2500Above(amt);
+            }
+        }else {
+            throw new Exception("Amount cannot be null or empty");
         }
     }
 
